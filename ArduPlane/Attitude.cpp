@@ -442,13 +442,13 @@ void Plane::stabilize()
 
 void Plane::calc_throttle()
 {
-    if (aparm.throttle_cruise <= 1) {
-        // user has asked for zero throttle - this may be done by a
-        // mission which wants to turn off the engine for a parachute
-        // landing
-        SRV_Channels::set_output_scaled(SRV_Channel::k_throttle, 0);
-        return;
-    }
+    // if (aparm.throttle_cruise <= 1) {
+    //     // user has asked for zero throttle - this may be done by a
+    //     // mission which wants to turn off the engine for a parachute
+    //     // landing
+    //     SRV_Channels::set_output_scaled(SRV_Channel::k_throttle, 0);
+    //     return;
+    // }
 
     int32_t commanded_throttle = SpdHgt_Controller->get_throttle_demand();
 
